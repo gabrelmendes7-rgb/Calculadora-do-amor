@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let valor = this.innerText;
 
             if (valor === "=") {
+                if (expressao === "") {
+                    return;
+                }
+
                 try {
                     expressao = expressao.replace("X", "*");
                     display.innerText = eval(expressao);
