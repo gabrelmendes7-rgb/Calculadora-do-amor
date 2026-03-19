@@ -1,46 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
+function insere_visor (digito) {
+    let visor = document.getElementById('visor');
+    if (visor.innerText === "0") {
+        visor.innerText = digito;
+    } else {
+        visor.innerText += digito;
+    }
+}
 
-    const display = document.querySelector("label");
-    const botoes = document.querySelectorAll("button");
+function limpar_tudo() {
+    document.getElementById('visor').innerText='0';
+}
 
-    let expressao = "";
+function resultado_visor (resultado) {
+    document.getElementById('visor').innerText = resultado;
+}
 
-    botoes.forEach(botao => {
-        botao.addEventListener("click", function () {
-
-            let valor = this.innerText;
-
-            if (valor === "=") {
-                if (expressao === "") {
-                    return;
-                }
-
-                try {
-                    expressao = expressao.replace("X", "*");
-                    display.innerText = eval(expressao);
-                    expressao = display.innerText;
-                } catch {
-                    display.innerText = "Erro";
-                    expressao = "";
-                }
-            }
-
-            else if (valor === "LT") {
-                expressao = "";
-                display.innerText = "0";
-            }
-
-            else if (valor === "L") {
-                expressao = expressao.slice(0, -1);
-                display.innerText = expressao || "0";
-            }
-
-            else {
-                expressao += valor;
-                display.innerText = expressao;
-            }
-
-        });
-    });
-
-});
+function calcular (resultado_visor) {
+    let expressao = document.getElementById('visor').innerText;
+    try {
+        let resultado = eval(expressao);
+        resultado_visor(resultado);
+    } catch (erro) {
+        resultado_visor('Erro')
+    }
+}
