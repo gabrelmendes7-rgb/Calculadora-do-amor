@@ -7,42 +7,29 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
-<body>
-    <header>
-        <h1>Calculadora portátil</h1>
-    </header>
-    
+<body> 
     <main class="calculadora">
-        <label><div class="visor">0</div></label>
-        <div class="linha linha1">
-            <button>LT</button>
-            <button>L</button>
-            <button>%</button>
-            <button>/</button>
-            <button>X</button>
-        </div>
-
-        <div class="linha linha2">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>4</button>
-            <button>+</button>
-        </div>
-
-        <div class="linha linha3">
-            <button>5</button>
-            <button>6</button>
-            <button>7</button>
-            <button>8</button>
-            <button>-</button>
-        </div>
-
-        <div class="linha linha4">
-            <button>9</button>
-            <button>0</button>
-            <button>.</button>
-            <button id="igual">=</button>
+        <div id="visor">0</div>
+        <div class="grid-botoes">
+                <button onclick="limpar_tudo()">LT</button>
+                <button onclick="limpar_ultimo()">LU</button>
+                <button onclick="insere_visor('%')">%</button>
+                <button onclick="insere_visor('/')">/</button>
+                <button onclick="insere_visor('*')">x</button>
+                <button onclick="insere_visor('1')">1</button>
+                <button onclick="insere_visor('2')">2</button>
+                <button onclick="insere_visor('3')">3</button>
+                <button onclick="insere_visor('4')">4</button>
+                <button onclick="insere_visor('+')">+</button>
+                <button onclick="insere_visor('5')">5</button>
+                <button onclick="insere_visor('6')">6</button>
+                <button onclick="insere_visor('7')">7</button>
+                <button onclick="insere_visor('8')">8</button>
+                <button onclick="insere_visor('-')">-</button>
+                <button onclick="insere_visor('9')">9</button>
+                <button onclick="insere_visor('0')">0</button>
+                <button onclick="insere_visor('.')">.</button>
+                <button class="igual" onclick="calcular(resultado_visor)">=</button>
         </div>
     </main>      
 </body>
