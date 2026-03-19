@@ -11,9 +11,18 @@ function limpar_tudo() {
     document.getElementById('visor').value='0';
 }
 
+function limpar_ultimo() {
+    let visor = document.getElementById('visor');
+    visor.value = visor.value.slice(0, -1); 
+    if (visor.value === "") {
+        visor.value = "0"; 
+    }
+}
+
 function resultado_visor (resultado) {
     document.getElementById('visor').value = resultado;
 }
+
 
 function calcular (resultado_visor) {
     let expressao = document.getElementById('visor').value;
